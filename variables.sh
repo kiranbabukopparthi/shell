@@ -41,5 +41,5 @@ read $person1
 echo "Please enter person2 name : "
 read $person2
 
-echo "$person1 : How are you $person2"
-echo "$person2 : I am fine. Thanks for asking $person1"
+echo $person1 ": How are you $person2"
+echo $person2 ": I am fine. Thanks for asking $person1"
