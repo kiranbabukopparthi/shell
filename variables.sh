@@ -54,7 +54,7 @@
 echo "Please enter your username : "
 read username
 echo "Please enter ypur password : "
-read password
+read -s password
 
 echo "Your username is $username"
 echo "Your password is hidden while you are typing. The password is : $password"
