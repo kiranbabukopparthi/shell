@@ -72,9 +72,28 @@
 
 # we can process expressions like mathematical calculations
 # program-7
-a=10
-b=20
+# a=10
+# b=20
 
-add=$(($a+$b))
-echo "Addition of $a and $b is $add"
+# add=$(($a+$b))
+# echo "Addition of $a and $b is $add"
 
+# All special variables should be used only within the double quotes otherwise it won't be treated as variables.
+
+# program-8
+echo "$1, $2 ...$N are the arguments passed to script dynamically" 
+echo "write any two names for example"
+name1="$1"
+name2="$2"
+echo "names are $name1 and $name2"
+echo "All variables passed to script : $@" 
+echo "Number of variables passed to script : $#"
+echo "Current script name : $0"
+echo "present directory you are in : $PWD"
+echo "who is running this script : $USER"
+echo "Home directory of the user : $HOME"
+echo "PID(Process Instance ID) of the script : $$"
+echo "To take a command to background & is used"
+sleep 10 &
+echo "To access background Process id : $!"
+echo "Exit status of previous command : $?"
