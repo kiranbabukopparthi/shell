@@ -17,8 +17,10 @@ else
  echo "You are running with sudo access"
 fi
 
-package=$2
+
 check(){
+package=$2
+
 if [ $1 -eq 0 ]; then
  echo "$package installation will be success"
 else
