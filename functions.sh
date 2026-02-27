@@ -17,7 +17,7 @@ else
  echo "You are running with sudo access"
 fi
 
-package=$1
+package=$2
 check(){
 if [ $? -eq 0 ]; then
  echo "$package installation will be success"
@@ -28,4 +28,4 @@ fi
 }
 
 dnf install nginx -y
-check() $? "Nginx"
+check() "$?" "Nginx"
