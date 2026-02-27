@@ -61,6 +61,6 @@
 
 # if you give the command within the normal braces, then it will execute within the braces
 # program-6
-Today's_date=$(date)
-echo "$Today's_date"
+today_date=$(date)
+echo "$today_date"
 
