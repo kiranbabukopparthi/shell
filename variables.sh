@@ -61,6 +61,21 @@
 
 # if you give the command within the normal braces, then it will execute within the braces
 # program-6
-today_date=$(date)
-echo "$today_date"
+# today_date=$(date)
+# echo "$today_date"
+
+# Here $ is command substitution. which means date function is processed inside the braces.
+# And the processed data will be assigned to variable (today_date)
+
+# date is usually calculated in seconds and we can print the date, time in our required manner.
+# we can use date --help we can get many options.
+
+# we can process expressions like mathematical calculations
+# program-7
+a=10
+b=20
+echo "Addition is ($a+$b)"
+echo "If you want to store the value in a variable and print it"
+add=$(($a+$b))
+echo "Here value stored in add variable is $add"
 
