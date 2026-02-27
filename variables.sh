@@ -51,10 +51,16 @@
 # username can be exposed but password should be hidden while entering. In this case -s is used along with read
 
 # program-5
-echo "Please enter your username : "
-read username
-echo "Please enter ypur password : "
-read -s password
+# echo "Please enter your username : "
+# read username
+# echo "Please enter ypur password : "
+# read -s password
 
-echo "Your username is $username"
-echo "Your password is hidden while you are typing. The password is : $password"
+# echo "Your username is $username"
+# echo "Your password is hidden while you are typing. The password is : $password"
+
+# if you give the command within the normal braces, then it will execute within the braces
+# program-6
+Today's_date=$(date)
+echo "$Today's_date"
+
