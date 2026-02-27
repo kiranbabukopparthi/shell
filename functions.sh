@@ -28,4 +28,4 @@ fi
 }
 
 dnf install nginx -y
-check() "$?" "Nginx"
+check() $? "Nginx"
