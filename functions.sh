@@ -10,7 +10,7 @@
 
 # program-1
 userid=$(id -u)
-exit_code=$1
+exit_code=$?
 checking(){
 if [ $exit_code -ne 0]; then
  echo "No Sudo Access"
