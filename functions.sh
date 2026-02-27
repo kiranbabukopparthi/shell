@@ -19,7 +19,7 @@ fi
 
 package=$2
 check(){
-if [ $? -eq 0 ]; then
+if [ $1 -eq 0 ]; then
  echo "$package installation will be success"
 else
  echo "$package installation will be failure"
