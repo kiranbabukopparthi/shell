@@ -12,7 +12,7 @@
 userid=$(id -u)
 exit_code=$?
 checking(){
-if [ $exit_code -ne 0]; then
+if [ $exit_code -ne 0 ]; then
  echo "No Sudo Access"
 else
  echo "Sudo Access"
