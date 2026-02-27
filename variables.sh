@@ -35,14 +35,26 @@
 # we can access the data or can take the input from end user at run time usinh read function. 
 # read function is used to read the data/inputb given by user and we can store that data using variables
 
-program-4
-echo "Please enter person1 name : "
-read person1
-echo "Please enter person2 name : "
-read person2
+# program-4
+# echo "Please enter person1 name : "
+# read person1
+# echo "Please enter person2 name : "
+# read person2
 
-echo "$person1: How are you $person2"
-echo "$person2: I am fine. Thanks for asking $person1"
+# echo "$person1: How are you $person2"
+# echo "$person2: I am fine. Thanks for asking $person1"
 
-# name=kiran
-# echo "$name Hi: You are $name"
+# when user enters the name, it will be read by read function and store it in the person1 variable. 
+# later it can be printed whenever we need. This is how we read dynamic data using special variables or read function
+
+# To hide the input while end user is writing/giving dynamically. Best example is username and password.
+# username can be exposed but password should be hidden while entering. In this case -s is used along with read
+
+# program-5
+echo "Please enter your username : "
+read username
+echo "Please enter ypur password : "
+read password
+
+echo "Your username is $username"
+echo "Your password is hidden while you are typing. The password is : $password"
