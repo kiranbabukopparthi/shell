@@ -20,7 +20,7 @@
 
 # program-2
 userid=$(id -u)
-if [ userid -ne 0 ]; then
+if [ $userid -ne 0 ]; then
  echo "Run with sudo access"
 else
  echo "You are running with sudo access"
