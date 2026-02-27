@@ -17,14 +17,15 @@ else
  echo "You are running with sudo access"
 fi
 
-dnf install nginx -y
+package=$1
 check(){
 if [ $? -eq 0 ]; then
- echo "$1 installation will be success"
+ echo "$package installation will be success"
 else
- echo "$1 installation will be failure"
+ echo "$package installation will be failure"
 fi
 
 }
 
+dnf install nginx -y
 check() $? "Nginx"
