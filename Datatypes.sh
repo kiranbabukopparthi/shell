@@ -9,10 +9,10 @@
 # it can be declared directly similar to normal varibale.
 # But will accessing we use {[index value or all]}
 
-# program-1
-echo "FRUIT is an array"
-FRUIT=("apple" "banana" "mango")
-echo "Fruits are ${FRUIT[@]}"
+# # program-1
+# echo "FRUIT is an array"
+# FRUIT=("apple" "banana" "mango")
+# echo "Fruits are ${FRUIT[@]}"
 
 echo "enter any three fruits"
 read "FRUIT=("$1" "$2" "$3")"
