@@ -74,8 +74,8 @@
 # program-7
 a=10
 b=20
-echo "Addition is $a+$b"
+echo "Addition is ($a+$b)"
 echo "If you want to store the value in a variable and print it"
-add=$($a+$b)
+add=$(($a+$b))
 echo "Here value stored in add variable is $add"
 
