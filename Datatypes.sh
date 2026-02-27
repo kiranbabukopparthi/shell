@@ -10,6 +10,10 @@
 # But will accessing we use {[index value or all]}
 
 # program-1
-echo "enter any there fruit names"
+echo "FRUIT is an array"
 FRUIT=("apple" "banana" "mango")
 echo "Fruits are ${FRUIT[@]}"
+
+echo "enter any three fruits"
+read "FRUIT=("$1" "$2" "$3")"
+echo "reverse of fruits are $3 $2 $1"
