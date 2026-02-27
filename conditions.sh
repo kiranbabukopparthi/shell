@@ -17,6 +17,12 @@
 # -eq --> equal to
 # -ne --> not equal to
 
+# exit code express whether the previous command run successfully or not
+# 0 - success
+# 1 to 127 - failure
+
+# if failure exit code is encountered while script is running
+# then the script will terminated immediately 
 
 # program-2
 userid=$(id -u)
@@ -28,3 +34,4 @@ else
 fi
 
 dnf install nginx -y
+dnf remove nginx -y
