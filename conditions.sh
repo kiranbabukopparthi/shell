@@ -25,13 +25,13 @@
 # then the script will terminated immediately 
 
 # program-2
-userid=$(id -u)
-if [ $userid -ne 0 ]; then
- echo "Run with sudo access"
- exit 1
-else
- echo "You are running with sudo access"
-fi
+# userid=$(id -u)
+# if [ $userid -ne 0 ]; then
+#  echo "Run with sudo access"
+#  exit 1
+# else
+#  echo "You are running with sudo access"
+# fi
 
-dnf install nginx -y
-dnf remove nginx -y
+# dnf install nginx -y
+# dnf remove nginx -y
