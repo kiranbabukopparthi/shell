@@ -15,5 +15,8 @@
 # echo "Fruits are ${FRUIT[@]}"
 
 echo "enter any three fruits"
-read "FRUIT=("$1" "$2" "$3")"
-echo "reverse of fruits are $3 $2 $1"
+read fruit1
+read fruit2
+read fruit3
+FRUIT=("$fruit1" "$fruit2" "$fruit3")
+echo "The fruits are ${FRUIT[@]}"
