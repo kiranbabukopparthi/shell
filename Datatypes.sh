@@ -11,5 +11,5 @@
 
 # program-1
 echo "enter any there fruit names"
-{FRUIT}=$(read fruit1 fruit2 fruit3)
+FRUIT=("apple" "banana" "mango")
 echo "Fruits are ${FRUIT[@]}"
