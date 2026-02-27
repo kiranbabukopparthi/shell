@@ -10,7 +10,7 @@
 
 # program-1
 userid=$(id -u)
-exit_code=$?
+exit_code="$?"
 checking(){
 if [ $exit_code -ne 0 ]; then
  echo "No Sudo Access"
@@ -20,4 +20,4 @@ fi
 }
 
 dnf install nginx -y
-checking $? "Nginx"
+checking "$?" "Nginx"
