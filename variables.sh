@@ -32,10 +32,10 @@
 # Here $1 indicates first variable and $2 incdicates second varibale (which are given at run time) - and so on
 # we have more special variables like these mentioned below
 
-we can access the data or can take the input from end user at run time usinh read function. 
-read function is used to read the data/inputb given by user and we can store that data using variables
+# we can access the data or can take the input from end user at run time usinh read function. 
+# read function is used to read the data/inputb given by user and we can store that data using variables
 
-program-4
+# program-4
 echo "Please enter person1 name : "
 read $person1
 echo "Please enter person2 name : "
