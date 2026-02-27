@@ -10,14 +10,21 @@
 
 # program-1
 userid=$(id -u)
-exit_code="$?"
-checking(){
-if [ $exit_code -ne 0 ]; then
- echo "No Sudo Access"
+if [ $userid -ne 0 ]; then
+ echo "You are running with normal access, use sudo access"
+ exit 1
 else
- echo "Sudo Access"
+ echo "You are running with sudo access"
 fi
-}
 
 dnf install nginx -y
-checking "$?" "Nginx"
+check(){
+if [ $? -eq 0 ]; then
+ echo "$1 installation will be success"
+else
+ echo "$1 installation will be failure"
+fi
+
+}
+
+check() $? "Nginx"
