@@ -8,4 +8,5 @@ if [ condition==true ] ; then
  echo "if condition executed"
 else
  echo "else condition is executed"
-
+ fi
+ 
