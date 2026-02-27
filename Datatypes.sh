@@ -12,4 +12,4 @@
 # program-1
 echo "enter any there fruit names"
 FRUIT=$(read fruit1 fruit2 fruit3)
-echo "Fruits are $FRUIT{[@]}"
+echo "Fruits are ${FRUIT[@]}"
