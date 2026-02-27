@@ -81,8 +81,7 @@
 # All special variables should be used only within the double quotes otherwise it won't be treated as variables.
 
 # program-8
-echo "$1, $2 ...$N are the arguments passed to script dynamically" 
-echo "write any two names for example"
+echo "arguments passed to script dynamically" 
 name1="$1"
 name2="$2"
 echo "names are $name1 and $name2"
