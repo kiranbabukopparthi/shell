@@ -36,10 +36,13 @@
 # read function is used to read the data/inputb given by user and we can store that data using variables
 
 # program-4
-echo "Please enter person1 name : "
-read $person1
-echo "Please enter person2 name : "
-read $person2
+# echo "Please enter person1 name : "
+# read $person1
+# echo "Please enter person2 name : "
+# read $person2
 
-echo $person1 ": How are you $person2"
-echo $person2 ": I am fine. Thanks for asking $person1"
+# echo $person1 ": How are you $person2"
+# echo $person2 ": I am fine. Thanks for asking $person1"
+
+name=kiran
+echo "$name Hi: You are $name"
