@@ -91,26 +91,26 @@
 # If the folder is not available then we will get file not found error.
 
 
-# userid=$(id -u)
-# LOG_FOLDER="/var/log/shell-script"
-# mkdir -p $LOG_FOLDER
-# LOG_FILE="$LOG_FOLDER/$0.log"
+userid=$(id -u)
+LOG_FOLDER="/var/log/shell-script"
+mkdir -p $LOG_FOLDER
+LOG_FILE="$LOG_FOLDER/$0.log"
 
-# if [ $userid -ne 0 ]; then
-#  echo "You should have sudo access to proceed further" | tee -a LOG_FILE
-#  exit 1
-# fi
+if [ $userid -ne 0 ]; then
+ echo "You should have sudo access to proceed further" | tee -a $LOG_FILE
+ exit 1
+fi
 
-# VALIDATE(){
-#  if [ $1 -ne 0 ]; then
-#   echo "$2 installation is Failed"| tee -a LOG_FILE
-# else
-#  echo "$2 installation is Success"| tee -a LOG_FILE
-# fi
-# }
+VALIDATE(){
+ if [ $1 -ne 0 ]; then
+  echo "$2 installation is Failed"| tee -a $LOG_FILE
+else
+ echo "$2 installation is Success"| tee -a $LOG_FILE
+fi
+}
 
-# dnf install nginx -y &>>LOG_FILE
-# VALIDATE $? "Nginx"
+dnf install nginx -y &>>$LOG_FILE
+VALIDATE $? "Nginx"
 
 # Here when the first tee command encountered, it will check whether log folder is available or not.
 # if it is available then it can create a log file automcatically (here $0 means current file name)
@@ -118,30 +118,30 @@
 
 
 
-USERID=$(id -u)
-LOG_FOLDER="/var/log/shell-script"
-mkdir -p $LOG_FOLDER
-LOG_FILE="/var/log/shell-script/$0.log"
+# USERID=$(id -u)
+# LOG_FOLDER="/var/log/shell-script"
+# mkdir -p $LOG_FOLDER
+# LOG_FILE="/var/log/shell-script/$0.log"
 
-if [ $USERID -ne 0 ] ; then 
-   echo "Run with Root access" | tee -a $LOG_FILE
-   exit 1
-fi
+# if [ $USERID -ne 0 ] ; then 
+#    echo "Run with Root access" | tee -a $LOG_FILE
+#    exit 1
+# fi
 
 
-VALIDATE(){
-   if [ $1 -ne 0 ] ; then
-    echo "$2 is Failure"| tee -a $LOG_FILE
-   else
-     echo "$2 is success"| tee -a $LOG_FILE
-    fi
-}
+# VALIDATE(){
+#    if [ $1 -ne 0 ] ; then
+#     echo "$2 is Failure"| tee -a $LOG_FILE
+#    else
+#      echo "$2 is success"| tee -a $LOG_FILE
+#     fi
+# }
 
-dnf install nginx -y &>> $LOG_FILE
-VALIDATE $? "Installing nginx"
+# dnf install nginx -y &>> $LOG_FILE
+# VALIDATE $? "Installing nginx"
 
-dnf install mysql -y &>> $LOG_FILE
-VALIDATE $? "Installing mysql"
+# dnf install mysql -y &>> $LOG_FILE
+# VALIDATE $? "Installing mysql"
 
-dnf install nodejs -y &>> $LOG_FILE
-VALIDATE $? "Installing nodejs"
+# dnf install nodejs -y &>> $LOG_FILE
+# VALIDATE $? "Installing nodejs"
