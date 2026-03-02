@@ -11,6 +11,10 @@
 # set modifies shell behavior and error handling, 
 # while trap catches signals and runs commands when specific events occur.
 
-set -e
-echo "This is set command and below will get error"
-echoo "This is error"
+# set -e
+# echo "This is set command and below will get error"
+# echoo "This command is not printed and script will exit here"
+
+trap "echo Script finished" EXIT
+echo "Running script..."
+
