@@ -6,11 +6,11 @@ mkdir -p $LOG_FOLDER
 LOG_FILE="$LOG_FOLDER/$0.log"
 
 ROOT(){
-if [ $userid -ne 0 ]; then
+if [ $userid -eq 0 ]; then
+ echo "You are root user. Proceeding further"
+else
  echo "Access Denied. Run with Root Access"
  exit 1
-else
- echo "You are root user. Proceeding further"
 fi
 }
 
@@ -25,7 +25,6 @@ fi
 echo "Hi, kindly let me know which package/s you want to install"
 read -a PACKAGE_NAMES
 ROOT()
-
 for package in ${PACKAGE_NAMES[@]}
 do 
  dnf list istalled $package
