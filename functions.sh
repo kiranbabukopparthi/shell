@@ -9,25 +9,32 @@
 
 
 # program-1
-userid=$(id -u)
-if [ $userid -ne 0 ]; then
- echo "You are running with normal access, use sudo access"
- exit 1
-else
- echo "You are running with sudo access"
-fi
+# userid=$(id -u)
+# if [ $userid -ne 0 ]; then
+#  echo "You are running with normal access, use sudo access"
+#  exit 1
+# else
+#  echo "You are running with sudo access"
+# fi
 
 
-check(){
-package=$2
+# check(){
+# package=$2
 
-if [ $1 -eq 0 ]; then
- echo "$package installation will be success"
-else
- echo "$package installation will be failure"
-fi
+# if [ $1 -eq 0 ]; then
+#  echo "$package installation will be success"
+# else
+#  echo "$package installation will be failure"
+# fi
 
-}
+# }
 
-dnf install nginx -y
-check $? "Nginx"
+# dnf install nginx -y
+# check $? "Nginx"
+
+# here package2 variable is inside the check function.
+# so it will read and update the value in package.
+
+# if it is declared outside the check function. Then it won't read as $2
+
+
