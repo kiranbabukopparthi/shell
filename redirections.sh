@@ -61,24 +61,58 @@
 
 
 
+# userid=$(id -u)
+# LOG_FOLDER="/var/log/shell-script"
+# mkdir -p $LOG_FOLDER
+# LOG_FILE="$LOG_FOLDER/$0.log"
+
+# if [ $userid -ne 0 ]; then
+#  echo "You should have sudo access to proceed further"
+#  exit 1
+# fi
+
+# VALIDATE(){
+#  if [ $1 -ne 0 ]; then
+#   echo "$2 installation is Failed"
+# else
+#  echo "$2 installation is Success"
+# fi
+# }
+
+# dnf install nginx -y &>>LOG_FILE
+# VALIDATE $? "Nginx"
+
+
+# TEE COMMAND
+# tee command is linux is used to read from the standard input and writes the same content to both standard output(screen) and one or more files simultaneously
+# Here we want to store the output log in the log file as well as we want the see it on the screen.
+
+# if the log file is not available then tee command can create a file automatically but there is should be log folder available.
+# If the folder is not available then we will get file not found error.
+
+
 userid=$(id -u)
 LOG_FOLDER="/var/log/shell-script"
 mkdir -p $LOG_FOLDER
-touch $LOG_FOLDER/$0.log
-LOG_FILE=$0.log
+LOG_FILE="$LOG_FOLDER/$0.log"
 
 if [ $userid -ne 0 ]; then
- echo "You should have sudo access to proceed further"
+ echo "You should have sudo access to proceed further" | tee -a LOG_FILE
  exit 1
 fi
 
 VALIDATE(){
  if [ $1 -ne 0 ]; then
-  echo "$2 installation is Failed"
+  echo "$2 installation is Failed"| tee -a LOG_FILE
 else
- echo "$2 installation is Success"
+ echo "$2 installation is Success"| tee -a LOG_FILE
 fi
 }
 
 dnf install nginx -y &>>LOG_FILE
 VALIDATE $? "Nginx"
+
+# Here when the first tee command encountered, it will check whether log folder is available or not.
+# if it is available then it can create a log file automcatically (here $0 means current file name)
+# so redirections.log file will be created automcatically by tee command
+
