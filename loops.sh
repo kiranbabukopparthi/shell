@@ -31,9 +31,9 @@ do
  dnf list istalled $package
  exit_code=$?
   if [ $exit_code -eq 0 ]; then
-   echo ""$package is already installed. Skipping Now""
+   echo ""$package is already installed. Skipping Now""| tee -a $LOG_FILE
   else
-   echo "$package is not installed, installing now"
+   echo "$package is not installed, installing now"| tee -a $LOG_FILE
    dnf install $package -y &>>LOG_FILE
    VALIDATE $? "$package installation"
   fi
