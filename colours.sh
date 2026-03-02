@@ -25,11 +25,11 @@ userid=$(id -u)
 LOG_FOLDER="/var/log/shell-script"
 mkdir -p $LOG_FOLDER
 LOG_FILE="$LOG_FOLDER/$0.log"
-R="/e[31m]"
-G="/e[32m]"
-Y="/e[33m]"
-B="/e[34m]"
-N="/e[0m]"
+R="\e[31m]"
+G="\e[32m]"
+Y="\e[33m]"
+B="\e[34m]"
+N="\e[0m]"
 
 ROOT(){
 if [ $userid -eq 0 ]; then
@@ -44,7 +44,7 @@ VALIDATE() {
 if [ $1 -ne 0 ]; then
  echo -e "$2 $R is Failed $N" | tee -a $LOG_FILE
 else 
- echo "$B $2 is success $N" | tee -a $LOG_FILE
+ echo -e "$B $2 is success $N" | tee -a $LOG_FILE
 fi
 }
 
@@ -60,7 +60,7 @@ do
   if [ $exit_code -eq 0 ]; then
    echo -e " $G $package is already installed.$N ... $YSkipping $Y Now"| tee -a $LOG_FILE
   else
-   echo "$package is not installed, installing now"| tee -a $LOG_FILE
+   echo -e "$package is not installed, installing now"| tee -a $LOG_FILE
    dnf install $package -y &>>$LOG_FILE
    VALIDATE $? "$package installation"
   fi
