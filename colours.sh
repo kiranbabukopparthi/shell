@@ -33,7 +33,7 @@ N="\e[0m]"
 
 ROOT(){
 if [ $userid -eq 0 ]; then
- echo -e "$G You are root user. Proceeding further $N"
+ echo -e "$B You are root user. Proceeding further $N"
 else
  echo -e "$R Access Denied. Run with Root Access $N"
  exit 1
@@ -58,7 +58,7 @@ do
  dnf list installed $package &>>$LOG_FILE
  exit_code=$?
   if [ $exit_code -eq 0 ]; then
-   echo -e " $G $package is already installed.$N ... $YSkipping $Y Now"| tee -a $LOG_FILE
+   echo -e " $B $package is already installed.$N ... $Y Skipping $N Now"| tee -a $LOG_FILE
   else
    echo -e "$package is not installed, installing now"| tee -a $LOG_FILE
    dnf install $package -y &>>$LOG_FILE
