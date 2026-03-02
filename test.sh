@@ -1,6 +1,6 @@
 #!/bin/bash
 
 echo "give 5 names"
-read {NAMES[$@]}
+read -a NAMES
 
 echo ${NAMES[$@]}
