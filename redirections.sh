@@ -97,7 +97,7 @@ mkdir -p $LOG_FOLDER
 LOG_FILE="$LOG_FOLDER/$0.log"
 
 if [ $userid -ne 0 ]; then
- echo "You should have sudo access to proceed further" | tee -a $LOG_FILE
+ echo "You should have sudo access to proceed further" | &>>$LOG_FILE | tee -a $LOG_FILE
  exit 1
 fi
 
