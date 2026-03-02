@@ -1,6 +1,6 @@
 #!/bin/bash
 
-useid=$(id -u)
+userid=$(id -u)
 LOG_FOLDER="/var/log/shell-script"
 mkdir -p $LOG_FOLDER
 LOG_FILE="$LOG_FOLDER/$0.log"
@@ -27,13 +27,13 @@ read -a PACKAGE_NAMES
 ROOT()
 for package in ${PACKAGE_NAMES[@]}
 do 
- dnf list istalled $package
+ dnf list installed $package
  exit_code=$?
   if [ $exit_code -eq 0 ]; then
-   echo ""$package is already installed. Skipping Now""| tee -a $LOG_FILE
+   echo "$package is already installed. Skipping Now"| tee -a $LOG_FILE
   else
    echo "$package is not installed, installing now"| tee -a $LOG_FILE
-   dnf install $package -y &>>LOG_FILE
+   dnf install $package -y &>>$LOG_FILE
    VALIDATE $? "$package installation"
   fi
 done
