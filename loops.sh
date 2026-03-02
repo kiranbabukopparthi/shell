@@ -22,12 +22,14 @@ else
 fi
 }
 
+ROOT
+
 echo "Hi, kindly let me know which package/s you want to install"
 read -a PACKAGE_NAMES
-ROOT()
+
 for package in ${PACKAGE_NAMES[@]}
 do 
- dnf list installed $package
+ dnf list installed $package &>>$LOG_FILE
  exit_code=$?
   if [ $exit_code -eq 0 ]; then
    echo "$package is already installed. Skipping Now"| tee -a $LOG_FILE
