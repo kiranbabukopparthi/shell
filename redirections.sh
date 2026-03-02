@@ -43,13 +43,13 @@ LOG_FOLDER="/var/log/shell-script"
 mkdir -p $LOG_FOLDER
 LOG_FILE="LOG_FOLDER/$0.log"
 
-if[ $userid -ne 0 ]; then
+if [ $userid -ne 0 ]; then
  echo "You should have sudo access to proceed further"
  exit 1
 fi
 
 VALIDATE(){
- if[ $1 -ne 0 ]; then
+ if [ $1 -ne 0 ]; then
   echo "$2 installation is Failed"
 else
  echo "$2 installation is Success"
