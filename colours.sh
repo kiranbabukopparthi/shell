@@ -33,9 +33,9 @@ N='/e[0m]'
 
 ROOT(){
 if [ $userid -eq 0 ]; then
- echo -e "$GYou are root user. Proceeding further$N"
+ echo -e "$G You are root user. Proceeding further $N"
 else
- echo -e "$RAccess Denied. Run with Root Access$N"
+ echo -e "$R Access Denied. Run with Root Access $N"
  exit 1
 fi
 }
