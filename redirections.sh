@@ -40,7 +40,7 @@
 
 userid=$(id -u)
 LOG_FOLDER="/var/log/shell-script"
-mkdir -p /var/log/shell-script
+mkdir -p $LOG_FOLDER
 LOG_FILE="LOG_FOLDER/$0.log"
 
 if[ $userid -ne 0 ]; then
@@ -56,5 +56,5 @@ else
 fi
 }
 
-dnf install nginx -y & >> LOG_FILE
+dnf install nginx -y &>>LOG_FILE
 VALIDATE $? "Nginx"
