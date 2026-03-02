@@ -64,7 +64,7 @@
 userid=$(id -u)
 LOG_FOLDER="/var/log/shell-script"
 mkdir -p $LOG_FOLDER
-touch $LOG_FOLDER/redirections.log
+LOG_FILE=touch $LOG_FOLDER/$0.log
 
 if [ $userid -ne 0 ]; then
  echo "You should have sudo access to proceed further"
