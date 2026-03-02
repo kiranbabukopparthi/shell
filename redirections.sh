@@ -38,10 +38,33 @@
 # -p --> it will check the directory name and look if that directory is already available or not. 
 # If available, it will leave it otherwise it will create new one.
 
+# userid=$(id -u)
+# LOG_FOLDER="/var/log/shell-script"
+# mkdir -p $LOG_FOLDER
+# LOG_FILE="LOG_FOLDER/$0.log"
+
+# if [ $userid -ne 0 ]; then
+#  echo "You should have sudo access to proceed further"
+#  exit 1
+# fi
+
+# VALIDATE(){
+#  if [ $1 -ne 0 ]; then
+#   echo "$2 installation is Failed"
+# else
+#  echo "$2 installation is Success"
+# fi
+# }
+
+# dnf install nginx -y &>>LOG_FILE
+# VALIDATE $? "Nginx"
+
+
+
 userid=$(id -u)
 LOG_FOLDER="/var/log/shell-script"
 mkdir -p $LOG_FOLDER
-LOG_FILE="LOG_FOLDER/$0.log"
+touch -p "$LOG_FOLDER/redirections.log"
 
 if [ $userid -ne 0 ]; then
  echo "You should have sudo access to proceed further"
