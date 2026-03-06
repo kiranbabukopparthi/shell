@@ -1,4 +1,4 @@
 #!/bin/bash
 
-name = "kiran"
+name="kiran"
 echo $name
